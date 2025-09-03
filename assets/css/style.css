@@ -1,0 +1,87 @@
+/* --- 全体色味：モカムース基調 --- */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f5f0e6;
+  color: #2e2a26;
+}
+
+/* --- 固定ナビバー --- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #d2b48c; /* モカ系 */
+  box-shadow: 0 2px 6px rgba(60, 40, 20, 0.3);
+  z-index: 1000;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* --- ナビゲーションリンク --- */
+.nav-links a {
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 0 5px;
+  background: #f5f0e6;
+  border: 2px solid #5c4033;
+  border-radius: 8px;
+  color: #2e2a26;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 6px rgba(60, 40, 20, 0.2);
+}
+
+.nav-links a:hover {
+  background: #e6d7c3;
+}
+
+/* --- 言語選択ボタン（右端に配置） --- */
+.lang-selector {
+  margin-left: 20px;
+}
+
+#lang-select {
+  font-size: 1rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 2px solid #5c4033;
+  background-color: #f5f0e6;
+  color: #2e2a26;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+#lang-select:hover {
+  background: #e6d7c3;
+}
+
+/* --- メイン部分に余白（固定ナビが重ならないように） --- */
+main {
+  padding: 100px 20px 40px 20px;
+}
+
+/* --- トップページタイトル（アニメーション） --- */
+.home-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  animation: fadeInMove 2s ease-out;
+}
+
+@keyframes fadeInMove {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

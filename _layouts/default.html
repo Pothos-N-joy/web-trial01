@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'ja' }}">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const select = document.getElementById("lang-select");
+      if (select) {
+        select.addEventListener("change", function() {
+          window.location.href = this.value;
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- 固定ナビゲーション -->
+  <header class="site-header">
+    <nav class="nav-bar">
+      <div class="nav-links">
+        <a href="{% if page.lang == 'ja' %}/{% elsif page.lang == 'en' %}/en/{% else %}/zh/{% endif %}">Home</a>
+        <a href="{% if page.lang == 'ja' %}/about/{% elsif page.lang == 'en' %}/en/about/{% else %}/zh/about/{% endif %}">About Us</a>
+      </div>
+      <div class="lang-selector">
+        <select id="lang-select">
+          <option value="/" {% if page.lang == "ja" %}selected{% endif %}>日本語</option>
+          <option value="/en/" {% if page.lang == "en" %}selected{% endif %}>English</option>
+          <option value="/zh/" {% if page.lang == "zh" %}selected{% endif %}>中文</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+</body>
+</html>
