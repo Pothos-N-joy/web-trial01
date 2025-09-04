@@ -1,9 +1,9 @@
-/* --- 全体色味：モカムース基調 --- */
+/* --- 全体色味：白基調 --- */
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
-  background-color: #f5f0e6;
-  color: #2e2a26;
+  background-color: #ffffff;
+  color: #555555; /* 通常文字色 */
 }
 
 /* --- 固定ナビバー --- */
@@ -12,8 +12,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: #d2b48c; /* モカ系 */
-  box-shadow: 0 2px 6px rgba(60, 40, 20, 0.3);
+  background: #f9f9f9; /* 白寄りの淡いグレー */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
@@ -29,17 +29,17 @@ body {
   text-decoration: none;
   padding: 8px 16px;
   margin: 0 5px;
-  background: #f5f0e6;
-  border: 2px solid #5c4033;
+  background: #ffffff;
+  border: 2px solid #999999;
   border-radius: 8px;
-  color: #2e2a26;
+  color: #333333;
   font-weight: bold;
   transition: all 0.2s ease-in-out;
-  box-shadow: 2px 2px 6px rgba(60, 40, 20, 0.2);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links a:hover {
-  background: #e6d7c3;
+  background: #f0f0f0;
 }
 
 /* --- 言語選択ボタン（右端に配置） --- */
@@ -51,15 +51,15 @@ body {
   font-size: 1rem;
   padding: 6px 12px;
   border-radius: 6px;
-  border: 2px solid #5c4033;
-  background-color: #f5f0e6;
-  color: #2e2a26;
+  border: 2px solid #999999;
+  background-color: #ffffff;
+  color: #333333;
   cursor: pointer;
   transition: background 0.2s ease-in-out;
 }
 
 #lang-select:hover {
-  background: #e6d7c3;
+  background: #f0f0f0;
 }
 
 /* --- メイン部分に余白（固定ナビが重ならないように） --- */
@@ -72,6 +72,7 @@ main {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
+  color: #333333; /* 見出しは濃いグレー */
   animation: fadeInMove 2s ease-out;
 }
 
