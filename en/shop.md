@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Shop merch"
-lang: ja
+lang: en
 permalink: /en/shop/
 ---
 

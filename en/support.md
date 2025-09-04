@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Support & Donate"
-lang: ja
-permalink: /en/about/
+lang: en
+permalink: /en/support/
 ---
 
 <p>How to donate</p>

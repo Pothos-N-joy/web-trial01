@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Shop merch"
-lang: ja
+title: "商店商品"
+lang: zh
 permalink: /zh/shop/
 ---
 

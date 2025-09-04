@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Support & Donate"
+title: "ご支援・寄付について"
 lang: ja
-permalink: /about/
+permalink: /support/
 ---
 
 <p>寄付の方法</p>

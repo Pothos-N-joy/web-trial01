@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Support & Donate"
-lang: ja
-permalink: /zh/about/
+title: "關於支持捐款"
+lang: zh
+permalink: /zh/support/
 ---
 
 <p>如何捐款</p>

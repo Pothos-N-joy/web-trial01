@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Contact Us"
-lang: ja
+lang: en
 permalink: /en/contact/
 ---
 

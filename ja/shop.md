@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Shop merch"
+title: "グッズ販売"
 lang: ja
 permalink: /shop/
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Contact Us"
-lang: ja
+title: "聯絡我們"
+lang: zh
 permalink: /zh/contact/
 ---
 
