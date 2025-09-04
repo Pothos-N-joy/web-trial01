@@ -2,13 +2,13 @@
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
-  font-size: 16px;   /* PC・タブレット標準 */
-  line-height: 1.6;  /* 読みやすい行間 */
   background-color: #ffffff;
   color: #888888;  /* 薄めのグレー */
   text-shadow:
-    1px 1px 0 #ffffff,   /* 下に光 */
-    -1px -1px 1px #aaaaaa; /* 上に影 */
+    1px 1px 0 #ffffff,
+    -1px -1px 1px #aaaaaa;
+  font-size: 16px;      /* PC標準 */
+  line-height: 1.6;
 }
 
 /* --- 固定ナビバー --- */
@@ -17,7 +17,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: #f9f9f9; /* 白寄りの淡いグレー */
+  background: #f9f9f9;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -29,40 +29,39 @@ body {
   padding: 10px 20px;
 }
 
-/* --- ナビゲーションリンク --- */
 .nav-links a {
-  position: relative;           /* 疑似要素を基準にする */
+  position: relative;
   text-decoration: none;
   padding: 8px 16px;
   margin: 0 5px;
-  background: transparent;    /* 背景を透明に */
-  border: none;              /* 枠をなくす */
+  background: transparent;
+  border: none;
   color: #666666;
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-  box-shadow: none;          /* 影をなくす */
+  box-shadow: none;
+  font-size: 1rem;
 }
 
-/* 下線を疑似要素で用意 */
 .nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px;                /* テキストのすぐ下に配置 */
+  bottom: -2px;
   width: 0%;
   height: 2px;
-  background-color: #333333;   /* 下線の色 */
+  background-color: #333333;
   transition: width 0.3s ease-in-out;
 }
+
 .nav-links a:hover {
-  background: #f0f0f0;       /* ホバー時に薄いグレー背景 */
-  color: #333333;            /* ホバー時は濃いグレー文字 */
+  background: #f0f0f0;
+  color: #333333;
 }
 
 .nav-links a:hover::after {
   width: 100%;
 }
 
-/* --- 言語選択ボタン（右端に配置） --- */
 .lang-selector {
   margin-left: 20px;
 }
@@ -82,20 +81,18 @@ body {
   background: #f0f0f0;
 }
 
-/* --- メイン部分に余白（固定ナビが重ならないように） --- */
 main {
   padding: 100px 20px 40px 20px;
 }
 
-/* --- トップページタイトル（アニメーション） --- */
 .home-title {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
-  color: #666666;  /* 濃いめの薄グレー */
+  color: #666666;
   text-shadow:
-    2px 2px 2px #ffffff,   /* 下側を明るくして光沢感 */
-    -2px -2px 3px #999999; /* 上側に影で凹み強調 */
+    2px 2px 2px #ffffff,
+    -2px -2px 3px #999999;
   animation: fadeInMove 2s ease-out;
 }
 
@@ -110,18 +107,40 @@ main {
   }
 }
 
-/* --- スマホ調整 --- */
-@media (max-width: 600px) {
-  body {
-    font-size: 18px;   /* スマホは少し大きめ */
-  }
+/* --- レスポンシブ調整 --- */
 
-  .home-title {
-    font-size: 2rem;  /* タイトルも少し縮小してバランス調整 */
-  }
+/* 小型スマホ（～480px） */
+@media (max-width: 480px) {
+  body { font-size: 18px; }
+  .home-title { font-size: 1.8rem; }
+  .nav-links a { font-size: 0.95rem; padding: 5px 8px; }
+  #lang-select { font-size: 0.85rem; padding: 4px 8px; }
+  main { padding: 120px 10px 30px 10px; }
+}
 
-  .nav-links a {
-    padding: 6px 10px; /* リンクの余白を調整 */
-    font-size: 1rem;
-  }
+/* 中型スマホ（481px～600px） */
+@media (min-width: 481px) and (max-width: 600px) {
+  body { font-size: 18px; }
+  .home-title { font-size: 2rem; }
+  .nav-links a { font-size: 1rem; padding: 6px 10px; }
+  #lang-select { font-size: 0.9rem; padding: 5px 10px; }
+  main { padding: 120px 15px 30px 15px; }
+}
+
+/* タブレット（601px～900px） */
+@media (min-width: 601px) and (max-width: 900px) {
+  body { font-size: 17px; }
+  .home-title { font-size: 2.3rem; }
+  .nav-links a { font-size: 1rem; padding: 7px 12px; }
+  #lang-select { font-size: 0.95rem; padding: 5px 10px; }
+  main { padding: 110px 20px 35px 20px; }
+}
+
+/* 大型画面 PC（901px～） */
+@media (min-width: 901px) {
+  body { font-size: 16px; }
+  .home-title { font-size: 2.5rem; }
+  .nav-links a { font-size: 1rem; padding: 8px 16px; }
+  #lang-select { font-size: 1rem; padding: 6px 12px; }
+  main { padding: 100px 20px 40px 20px; }
 }
