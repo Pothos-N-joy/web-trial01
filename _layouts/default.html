@@ -15,62 +15,18 @@
       }
     });
   </script>
-
-  <script>
-    const btn = document.getElementById('hamburger-btn');
-    const nav = document.getElementById('nav-links');
-    const overlay = document.getElementById('overlay');
-    const iconMenu = btn.querySelector('.icon-menu');
-    const iconClose = btn.querySelector('.icon-close');
-
-    function toggleMenu() {
-      const isOpen = nav.classList.toggle('open');
-      overlay.classList.toggle('show', isOpen);
-      iconMenu.style.display = isOpen ? 'none' : 'block';
-      iconClose.style.display = isOpen ? 'block' : 'none';
-    }
-
-    btn.addEventListener('click', toggleMenu);
-
-    overlay.addEventListener('click', () => {
-      nav.classList.remove('open');
-      overlay.classList.remove('show');
-      iconMenu.style.display = 'block';
-      iconClose.style.display = 'none';
-    });
-
-    // 初期表示
-    iconClose.style.display = 'none';
-  </script>
-
 </head>
 <body>
   <!-- 固定ナビゲーション -->
   <header class="site-header">
     <nav class="nav-bar">
-      <!-- ハンバーガーボタン -->
-      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
-        <!-- SVGアイコン -->
-        <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-
-      <!-- メニュー本体 -->
-      <div class="nav-links" id="nav-links">
+      <div class="nav-links">
         <a href="{% if page.lang == 'ja' %}/{% elsif page.lang == 'en' %}/en/{% else %}/zh/{% endif %}">HOME</a>
         <a href="{% if page.lang == 'ja' %}/about/{% elsif page.lang == 'en' %}/en/about/{% else %}/zh/about/{% endif %}">ABOUT US</a>
         <a href="{% if page.lang == 'ja' %}/support/{% elsif page.lang == 'en' %}/en/support/{% else %}/zh/support/{% endif %}">SUPPORT & DONATE</a>
         <a href="{% if page.lang == 'ja' %}/shop/{% elsif page.lang == 'en' %}/en/shop/{% else %}/zh/shop/{% endif %}">SHOP MERCH</a>
         <a href="{% if page.lang == 'ja' %}/contact/{% elsif page.lang == 'en' %}/en/contact/{% else %}/zh/contact/{% endif %}">CONTACT US</a>
       </div>
-
-      <!-- 言語切替 -->
       <div class="lang-selector">
         <select id="lang-select">
           <option value="/" {% if page.lang == "ja" %}selected{% endif %}>日本語</option>
@@ -80,8 +36,6 @@
       </div>
     </nav>
   </header>
-  <!-- オーバーレイ -->
-  <div class="overlay" id="overlay"></div>
 
   <main>
     {{ content }}
