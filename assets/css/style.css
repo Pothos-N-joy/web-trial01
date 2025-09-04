@@ -2,6 +2,8 @@
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
+  font-size: 16px;   /* PC・タブレット標準 */
+  line-height: 1.6;  /* 読みやすい行間 */
   background-color: #ffffff;
   color: #888888;  /* 薄めのグレー */
   text-shadow:
@@ -105,5 +107,21 @@ main {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* --- スマホ調整 --- */
+@media (max-width: 600px) {
+  body {
+    font-size: 18px;   /* スマホは少し大きめ */
+  }
+
+  .home-title {
+    font-size: 2rem;  /* タイトルも少し縮小してバランス調整 */
+  }
+
+  .nav-links a {
+    padding: 6px 10px; /* リンクの余白を調整 */
+    font-size: 1rem;
   }
 }
