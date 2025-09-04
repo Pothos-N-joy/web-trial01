@@ -32,17 +32,18 @@ body {
   text-decoration: none;
   padding: 8px 16px;
   margin: 0 5px;
-  background: #ffffff;
+  background: transparent;    /* 背景を透明に */
   border: 2px solid #999999;
   border: none;              /* 枠をなくす */
   border-radius: 8px;
-  color: #333333;
+  color: #666666;
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
   box-shadow: none;          /* 影をなくす */
 }
 
 .nav-links a:hover {
-  background: #f0f0f0;
+  background: #f0f0f0;       /* ホバー時に薄いグレー背景 */
+  color: #333333;            /* ホバー時は濃いグレー文字 */
 }
 
 /* --- 言語選択ボタン（右端に配置） --- */
