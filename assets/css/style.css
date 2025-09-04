@@ -7,7 +7,7 @@ body {
   text-shadow:
     1px 1px 0 #ffffff,
     -1px -1px 1px #aaaaaa;
-  font-size: 16px;      /* PC標準 */
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -29,7 +29,19 @@ body {
   padding: 10px 20px;
 }
 
-/* --- ナビゲーションリンク --- */
+/* ハンバーガー */
+.burger {
+  display: none; /* PCでは非表示 */
+  cursor: pointer;
+  z-index: 1101; /* メニューより前 */
+}
+
+/* ナビゲーションメニュー */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
 .nav-links a {
   position: relative;
   text-decoration: none;
@@ -39,7 +51,6 @@ body {
   border: none;
   color: #666666;
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-  box-shadow: none;
   font-size: 1rem;
 }
 
@@ -63,7 +74,6 @@ body {
   width: 100%;
 }
 
-/* --- 言語切替 --- */
 .lang-selector {
   margin-left: 20px;
 }
@@ -83,126 +93,62 @@ body {
   background: #f0f0f0;
 }
 
-/* --- コンテンツエリア --- */
-main {
-  padding: 100px 20px 40px 20px;
-}
-
-.home-title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #666666;
-  text-shadow:
-    2px 2px 2px #ffffff,
-    -2px -2px 3px #999999;
-  animation: fadeInMove 2s ease-out;
-}
-
-@keyframes fadeInMove {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* --- ハンバーガーボタン --- */
-.hamburger {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: none; /* PCでは非表示 */
-  z-index: 1002; /* オーバーレイより上 */
-}
-
-.hamburger svg {
-  width: 28px;
-  height: 28px;
-  stroke: #333;
-}
-
-/* --- オーバーレイ --- */
+/* オーバーレイ */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.4);
   display: none;
-  z-index: 1000;
+  z-index: 1100;
 }
 
-.overlay.show {
+.overlay.active {
   display: block;
 }
 
-/* --- モバイル用ドロワーメニュー --- */
-@media (max-width: 900px) {
-  .hamburger {
-    display: block; /* モバイルでは表示 */
+/* --- モバイル用ハンバーガーメニュー --- */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
   }
 
   .nav-links {
-    flex-direction: column;
     position: fixed;
     top: 0;
-    left: -280px; /* 非表示状態 */
-    width: 70%;
-    max-width: 280px;
-    height: 100%;
+    right: -250px;
+    height: 100vh;
+    width: 250px;
     background: #fff;
-    border-right: 1px solid #ddd;
-    padding: 80px 20px 20px 20px;
-    box-shadow: 2px 0 6px rgba(0,0,0,0.1);
-    z-index: 1002;
-    transition: left 0.3s ease-in-out;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 20px;
+    gap: 20px;
+    box-shadow: -2px 0 6px rgba(0,0,0,0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1102;
   }
 
-  .nav-links.open {
-    left: 0; /* 表示状態 */
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .lang-selector {
+    width: 100%;
+  }
+
+  #lang-select {
+    width: 100%;
   }
 }
 
-/* --- レスポンシブ調整 --- */
-
-/* 小型スマホ（～480px） */
-@media (max-width: 480px) {
-  body { font-size: 18px; }
-  .home-title { font-size: 1.8rem; }
-  .nav-links a { font-size: 0.95rem; padding: 10px; }
-  #lang-select { font-size: 0.85rem; padding: 4px 8px; }
-  main { padding: 120px 10px 30px 10px; }
-}
-
-/* 中型スマホ（481px～600px） */
-@media (min-width: 481px) and (max-width: 600px) {
-  body { font-size: 18px; }
-  .home-title { font-size: 2rem; }
-  .nav-links a { font-size: 1rem; padding: 12px; }
-  #lang-select { font-size: 0.9rem; padding: 5px 10px; }
-  main { padding: 120px 15px 30px 15px; }
-}
-
-/* タブレット（601px～900px） */
-@media (min-width: 601px) and (max-width: 900px) {
-  body { font-size: 17px; }
-  .home-title { font-size: 2.3rem; }
-  .nav-links a { font-size: 1rem; padding: 14px; }
-  #lang-select { font-size: 0.95rem; padding: 5px 10px; }
-  main { padding: 110px 20px 35px 20px; }
-}
-
-/* 大型画面 PC（901px～） */
-@media (min-width: 901px) {
-  body { font-size: 16px; }
-  .home-title { font-size: 2.5rem; }
-  .nav-links { display: flex; }
-  .nav-links a { font-size: 1rem; padding: 8px 16px; }
-  #lang-select { font-size: 1rem; padding: 6px 12px; }
-  main { padding: 100px 20px 40px 20px; }
+main {
+  padding: 100px 20px 40px 20px;
 }
