@@ -29,21 +29,35 @@ body {
 
 /* --- ナビゲーションリンク --- */
 .nav-links a {
+  position: relative;           /* 疑似要素を基準にする */
   text-decoration: none;
   padding: 8px 16px;
   margin: 0 5px;
   background: transparent;    /* 背景を透明に */
-  border: 2px solid #999999;
   border: none;              /* 枠をなくす */
-  border-radius: 8px;
   color: #666666;
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
   box-shadow: none;          /* 影をなくす */
 }
 
+/* 下線を疑似要素で用意 */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;                /* テキストのすぐ下に配置 */
+  width: 0%;
+  height: 2px;
+  background-color: #333333;   /* 下線の色 */
+  transition: width 0.3s ease-in-out;
+}
 .nav-links a:hover {
   background: #f0f0f0;       /* ホバー時に薄いグレー背景 */
   color: #333333;            /* ホバー時は濃いグレー文字 */
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* --- 言語選択ボタン（右端に配置） --- */
