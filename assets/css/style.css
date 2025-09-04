@@ -33,7 +33,7 @@ body {
 .burger {
   display: none; /* PCでは非表示 */
   cursor: pointer;
-  z-index: 1101; /* メニューより前 */
+  z-index: 1101;
 }
 
 /* ナビゲーションメニュー */
@@ -151,4 +151,64 @@ body {
 
 main {
   padding: 100px 20px 40px 20px;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #666666;
+  text-shadow:
+    2px 2px 2px #ffffff,
+    -2px -2px 3px #999999;
+  animation: fadeInMove 2s ease-out;
+}
+
+@keyframes fadeInMove {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- レスポンシブ調整 --- */
+
+/* 小型スマホ（～480px） */
+@media (max-width: 480px) {
+  body { font-size: 18px; }
+  .home-title { font-size: 1.8rem; }
+  .nav-links a { font-size: 1rem; padding: 6px 10px; }
+  #lang-select { font-size: 0.85rem; padding: 4px 8px; }
+  main { padding: 120px 10px 30px 10px; }
+}
+
+/* 中型スマホ（481px～600px） */
+@media (min-width: 481px) and (max-width: 600px) {
+  body { font-size: 18px; }
+  .home-title { font-size: 2rem; }
+  .nav-links a { font-size: 1rem; padding: 7px 12px; }
+  #lang-select { font-size: 0.9rem; padding: 5px 10px; }
+  main { padding: 120px 15px 30px 15px; }
+}
+
+/* タブレット（601px～900px） */
+@media (min-width: 601px) and (max-width: 900px) {
+  body { font-size: 17px; }
+  .home-title { font-size: 2.3rem; }
+  .nav-links a { font-size: 1rem; padding: 7px 12px; }
+  #lang-select { font-size: 0.95rem; padding: 5px 10px; }
+  main { padding: 110px 20px 35px 20px; }
+}
+
+/* 大型画面 PC（901px～） */
+@media (min-width: 901px) {
+  body { font-size: 16px; }
+  .home-title { font-size: 2.5rem; }
+  .nav-links a { font-size: 1rem; padding: 8px 16px; }
+  #lang-select { font-size: 1rem; padding: 6px 12px; }
+  main { padding: 100px 20px 40px 20px; }
 }
